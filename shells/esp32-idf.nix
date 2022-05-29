@@ -1,5 +1,5 @@
 { pkgs
-, idfVersion ? "5.0"
+, idfVersion ? "4.4"
 , pythonVersionMajor ? "3"
 , pythonVersionMinor ? "8"
 }:
