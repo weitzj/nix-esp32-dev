@@ -38,6 +38,9 @@ in pkgs.mkShell {
     # A Python interpreter including the 'venv' module is required to bootstrap
     # the environment.
     pythonPackages.python
+
+    # rust
+    rust-bin.stable.latest.default
   ];
 
   shellHook = ''

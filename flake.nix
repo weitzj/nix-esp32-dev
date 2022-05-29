@@ -8,9 +8,14 @@
       url = "github:weitzj/nix-esp-gcc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, esp-gcc }: {
+  outputs = { self, nixpkgs, flake-utils, esp-gcc, rust-overlay, ... }: {
     overlay = final: prev: {
       gcc-xtensa-esp32-elf-bin = esp-gcc.defaultPackage.${prev.system};
       openocd-esp32-bin = prev.callPackage ./pkgs/openocd-esp32-bin.nix { };
@@ -21,7 +26,8 @@
       pkgs = import nixpkgs { 
         inherit system; 
         overlays = [ 
-          self.overlay 
+          self.overlay
+          (import rust-overlay)
         ]; 
       };
     in
