@@ -40,6 +40,7 @@ in pkgs.mkShell {
     pythonPackages.python
 
     # rust
+    rust-bin.nightly.latest.default
     rust-bin.stable.latest.default
   ];
 

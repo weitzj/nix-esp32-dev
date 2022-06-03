@@ -2,7 +2,7 @@
   description = "ESP32 development tools";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-21.11"; 
+    nixpkgs.url = "nixpkgs/nixos-22.05"; 
     flake-utils.url = "github:numtide/flake-utils";
     esp-gcc = { 
       url = "github:weitzj/nix-esp-gcc";
